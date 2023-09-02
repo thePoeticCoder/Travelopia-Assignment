@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose");
 
 const travelDataSchema = mongoose.Schema({
+  name:{ type: String, required: true },
   phoneNo:{type: Number, required: true},
   startingPoint :{ type: String, required: true },
   destination: { type: String, required: true },

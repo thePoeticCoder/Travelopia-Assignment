@@ -22,4 +22,14 @@ const getTravelData = async (req, res) => {
   }
 };
 
-module.exports = { createTravelData, getTravelData };
+const getAllTravelData = async (req, res) => {
+  try {
+    const travelData = await TravelCollection.find();
+    res.json(travelData);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server error");
+  }
+};
+
+module.exports = { createTravelData, getAllTravelData,getTravelData };
