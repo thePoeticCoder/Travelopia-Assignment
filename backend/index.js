@@ -11,6 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use('/user',userRoute);
+app.use('/',(req,res)=>{
+  res.json({"name": "Paras"})
+})
 app.use('/travel',travelRoute);
 app.listen(PORT, async () => {
   try {
